@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Form from './components/Form';
+import Display from './components/Display';
+import NinjaForm from './components/NinjaForm';
+import NinjaDisplay from './components/NinjaDisplay';
 
 function App() {
+  const [ boxColorArray, setBoxColorArray ] = useState([]);
+  const [ ninjaBoxArray, setNinjaBoxArray ] = useState([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Standard Assignment</h1>
+      <Form boxColorArray={ boxColorArray } setBoxColorArray={ setBoxColorArray } />
+      <Display boxColorArray={ boxColorArray } />
+      <hr />
+      <h1>Ninja Assignment</h1>
+      <NinjaForm ninjaBoxArray={ ninjaBoxArray } setNinjaBoxArray={ setNinjaBoxArray } />
+      <NinjaDisplay ninjaBoxArray={ ninjaBoxArray } />
     </div>
   );
 }
